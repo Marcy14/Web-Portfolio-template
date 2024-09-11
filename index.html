@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>Web Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+   <div class="container">
+       <nav>
+           <img src="images/logo.png" class="logo">
+           <ul>
+               <li><a href="">HOME</a></li>
+               <li><a href="">ABOUT</a></li>
+               <li><a href="">PORTFOLIO</a></li>
+               <li><a href="">SERVICES</a></li>
+           </ul>
+           <img src="images/moon.png" id="icon">
+       </nav>
+       
+       <div class="info">
+            <h1>I'm<span>Conor Maher</span> </h1>
+           <p>I am currently building my portfolion website, this is a none resposive version, I am  currently testing colour <br>
+		   schemes and themes prior to building my officical site. I aim to have my official site up and running on <br> Friday 11th September<br>
+		   The icons below display 4 LinkeIn icons which I plan to replace with Github, Stackoverflow, etc.<br>
+		   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore<br>
+		   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut<br>
+		   aliquip ex ea commodo consequat.<br>
+		   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
+		   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim <br>id est laborum</p>
+           <a href="">Download CV</a>
+       </div>
+       
+       <div class="img-box">
+           <img src="images/mp.png" class="back-img">
+           <img src="images/conor.png" class="main-img">
+       </div>
+       
+       <div class="social-links">
+           <a href=""><i class="fab fa-linkedin-in"></i></a>
+		   <a href=""><i class="fab fa-linkedin-in"></i></a>
+		   <a href=""><i class="fab fa-linkedin-in"></i></a>
+		   <a href=""><i class="fab fa-linkedin-in"></i></a>
+           
+       </div>
+   </div>
+       
+<script>
+    
+    var icon = document.getElementById("icon");
+    
+    
+    
+    if(localStorage.getItem("theme") == null){
+        localStorage.setItem("theme", "light");
+    }
+    
+    
+    
+    let localData = localStorage.getItem("theme");
+    
+    if(localData == "light"){
+        icon.src = "images/moon.png";
+        document.body.classList.remove("dark-theme");
+    }
+    else if(localData == "dark"){
+        icon.src = "images/sun.png";
+        document.body.classList.add("dark-theme");
+    }
+    
+    
+    
+    
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "images/sun.png";
+            localStorage.setItem("theme", "dark");
+        }else{
+            icon.src = "images/moon.png";
+            localStorage.setItem("theme", "light");
+        }
+    }
+    
+    
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
